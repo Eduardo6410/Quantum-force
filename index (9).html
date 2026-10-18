@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Quantum Force 8740: equipo FRC de Prepa Tecmilenio, Nuevo León, México. Cinco temporadas de robótica FIRST, premios y mentoría de equipos FTC.">
+<meta property="og:title" content="Quantum Force 8740 | FIRST Robotics Competition">
+<meta property="og:description" content="Equipo FRC de Prepa Tecmilenio, Nuevo León. Conoce nuestra trayectoria, premios y a quienes nos apoyan.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#4b1a7a">
+<title>Quantum Force 8740 | FIRST Robotics Competition</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Outfit:wght@400;500;700&display=swap">
+<style>
+:root{--p:#4b1a7a;--pd:#2a0e47;--pl:#b98cff;--k:#0a0a0a;--w:#efece6;--pk:#f7a8c8;--pk2:#e0467f;--ink:#0a0a0a;--bg:#efece6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--w);color:var(--ink);font:400 1.05rem/1.6 Outfit,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Bagel Fat One',Outfit,sans-serif;font-weight:400;line-height:1.05;margin:0}
+h2{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:.4em}
+p{max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pk);outline-offset:3px}
+section{position:relative;padding:clamp(4rem,10vw,8rem) clamp(1.2rem,6vw,5rem)}
+.wrap{max-width:1100px;margin:0 auto}
+section{overflow-x:clip}
+.dark{background:var(--k);color:var(--w)}.purple{background:var(--p);color:var(--w)}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.6rem clamp(1rem,4vw,3rem);background:rgba(10,10,10,.82);backdrop-filter:blur(10px);color:var(--w);transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+nav.on{transform:none}
+body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:49;background:rgba(10,10,10,.82)}
+nav b{font-family:'Bagel Fat One';font-weight:400;font-size:1.2rem;display:flex;align-items:center;gap:.6rem}
+nav img{width:34px;height:34px;border-radius:50%}
+nav div a{margin-left:1.2rem;text-decoration:none;font-size:.95rem;opacity:.8;transition:opacity .2s,color .2s}
+nav div a:hover{opacity:1;color:var(--pk)}
+@media(max-width:760px){nav div{display:none}}
+/* hero */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 40%,var(--p) 0,var(--pd) 55%,var(--k) 100%);color:var(--w);overflow:hidden;padding-top:6rem}
+.orbit{position:absolute;left:50%;top:50%;width:min(95vw,900px);aspect-ratio:1;translate:-50% -50%;opacity:.22;pointer-events:none}
+.orbit i{position:absolute;inset:0;border:2px solid var(--pl);border-radius:50%;animation:spin 22s linear infinite}
+.orbit i:nth-child(1){transform:rotate(0) scaleY(.35)}
+.orbit i:nth-child(2){transform:rotate(60deg) scaleY(.35);animation-duration:30s}
+.orbit i:nth-child(3){transform:rotate(120deg) scaleY(.35);animation-duration:38s}
+.orbit i:before{content:"";position:absolute;top:-7px;left:50%;width:14px;height:14px;border-radius:50%;background:var(--pk)}
+@keyframes spin{to{rotate:360deg}}
+.logo{width:clamp(150px,26vw,250px);border-radius:50%;box-shadow:0 0 0 6px rgba(239,236,230,.12),0 20px 80px rgba(185,140,255,.45);animation:pop 1.2s cubic-bezier(.2,1.4,.3,1) both,float 6s ease-in-out 1.2s infinite}
+@keyframes pop{from{scale:.2;rotate:-120deg;opacity:0}}
+@keyframes float{50%{translate:0 -14px}}
+.hero h1{font-size:clamp(3rem,11vw,8rem);margin:1.2rem 0 .3rem;position:relative}
+.hero h1 span{display:inline-block;animation:rise .9s cubic-bezier(.2,.9,.2,1) both}
+@keyframes rise{from{translate:0 80%;opacity:0;rotate:8deg}}
+.hero p{margin:0 auto;font-size:clamp(1.05rem,2.4vw,1.4rem);animation:fade 1s 1.2s both;position:relative}
+@keyframes fade{from{opacity:0}}
+.cta{display:inline-block;margin-top:2rem;padding:.9rem 1.8rem;border-radius:99px;background:var(--pk);color:var(--k);font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;animation:fade 1s 1.6s both;position:relative}
+.cta:hover{transform:translateY(-4px) rotate(-2deg);box-shadow:0 10px 30px rgba(247,168,200,.5)}
+.axo{position:absolute;width:var(--s,90px);height:var(--s,90px);animation:bob var(--t,5s) ease-in-out infinite;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.3))}
+@keyframes bob{0%,100%{translate:0 0;rotate:-5deg}50%{translate:10px -22px;rotate:6deg}}
+/* swim strip */
+.strip{height:90px;position:relative;overflow:hidden;background:var(--k)}
+.strip.pu{background:var(--p)}.strip.wh{background:var(--w)}
+.strip .axo{top:12px;--s:84px;left:-120px;animation:swim var(--d,18s) linear infinite,wig .8s ease-in-out infinite alternate}
+@keyframes swim{to{left:110%}}
+@keyframes wig{to{rotate:7deg;translate:0 -8px}}
+.bubble{position:absolute;bottom:-20px;border-radius:50%;border:2px solid rgba(239,236,230,.5);animation:up var(--t,8s) linear infinite}
+@keyframes up{to{translate:0 -100vh;opacity:0}}
+/* reveal */
+.r{opacity:0;transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.r.up{transform:translateY(60px)}.r.l{transform:translateX(-80px)}.r.rt{transform:translateX(80px)}.r.z{transform:scale(.8) rotate(-3deg)}
+.r.in{opacity:1;transform:none}
+.clip img{clip-path:inset(0 100% 0 0);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1),transform 1.2s}
+.clip.in img{clip-path:inset(0)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:3rem}
+.stat{padding:1.6rem;border-radius:28px;background:var(--w);color:var(--k);transition:transform .35s cubic-bezier(.3,1.5,.5,1),background .3s}
+.stat:nth-child(even){background:var(--pk)}
+.stat:hover{transform:translateY(-10px) rotate(-2deg)}
+.stat strong{display:block;font:400 clamp(2.6rem,6vw,4rem)/1 'Bagel Fat One';color:var(--p)}
+/* about */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.photo{border-radius:32px;overflow:hidden;box-shadow:12px 12px 0 var(--p)}
+.photo img{display:block;width:100%;height:auto;transition:transform 1.2s}
+.photo:hover img{transform:scale(1.05)}
+.big{display:block;margin:0 auto;max-width:1100px}
+/* timeline */
+.tl{position:relative;margin-top:3rem;padding-left:2.2rem}
+.tl:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:4px;border-radius:4px;background:rgba(239,236,230,.2)}
+.tl .line{position:absolute;left:8px;top:0;width:4px;border-radius:4px;background:var(--pk);height:0;transition:height .2s}
+.it{position:relative;display:grid;grid-template-columns:110px 1fr;gap:1rem;padding:1.4rem 0}
+.it:before{content:"";position:absolute;left:-2.2rem;top:2rem;width:20px;height:20px;border-radius:50%;background:var(--k);border:4px solid var(--pk);transition:scale .4s}
+.it.in:before{scale:1.3}
+.it h3{font-size:clamp(2rem,5vw,3rem);color:var(--pk)}
+.it h4{margin:0;font-size:1.3rem}
+.it p{margin:.2rem 0;opacity:.88}
+.tag{display:inline-block;margin:.4rem .4rem 0 0;padding:.25rem .8rem;border-radius:99px;background:var(--w);color:var(--p);font-weight:700;font-size:.9rem}
+@media(max-width:600px){.it{grid-template-columns:1fr;gap:0}}
+/* awards */
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:2.5rem}
+.aw{padding:1.8rem;border-radius:30px;background:var(--p);color:var(--w);transition:transform .4s cubic-bezier(.3,1.5,.5,1),background .3s}
+.aw:nth-child(3n+2){background:var(--k)}.aw:nth-child(3n){background:var(--pd)}
+.aw:hover{transform:translateY(-12px) rotate(2deg);background:var(--pk2)}
+.aw b{font:400 2.4rem 'Bagel Fat One';color:var(--pk);display:block}
+.aw span{font-size:1.15rem;font-weight:700}
+/* ftc */
+.teams{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2rem}
+.tm{padding:1.6rem;border-radius:30px;background:var(--w);color:var(--k);text-align:center;transition:transform .4s cubic-bezier(.3,1.5,.5,1),box-shadow .4s}
+.tm:hover{transform:translateY(-10px) rotate(-1.5deg);box-shadow:0 20px 50px rgba(185,140,255,.35)}
+.tm img{width:100%;max-width:340px;height:auto;display:block;margin:0 auto 1rem}
+.tm h3{font-size:1.9rem;color:var(--p)}
+.num{display:inline-block;margin:.3rem 0;padding:.2rem 1rem;border-radius:99px;background:var(--k);color:var(--pk);font:400 1.5rem 'Bagel Fat One'}
+.what{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:center;margin:2rem 0;padding:2rem;border-radius:30px;background:rgba(239,236,230,.08);border:2px solid rgba(239,236,230,.2)}
+.what .lg{background:var(--w);border-radius:24px;padding:1.2rem}.what .lg img{width:100%;max-width:260px;display:block;margin:0 auto}
+@media(max-width:800px){.what{grid-template-columns:1fr}}
+.awards{align-items:start}.aw.k{cursor:pointer;position:relative;padding-right:3.4rem;-webkit-tap-highlight-color:transparent}
+.aw .pl{position:absolute;right:1.2rem;top:1.3rem;width:34px;height:34px;border-radius:50%;background:var(--pk);color:var(--k);display:grid;place-items:center;font:700 1.4rem/1 Outfit;font-style:normal;transition:rotate .4s}
+.aw.open .pl{rotate:135deg}
+.aw .more{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .5s cubic-bezier(.2,.8,.2,1),opacity .4s}
+.aw.open .more{grid-template-rows:1fr;opacity:1}
+.aw .more p{overflow:hidden;margin:0;padding-top:0;font-size:1rem;line-height:1.5}.aw.open .more p{padding-top:.8rem}
+.aw.open{background:var(--pk2)!important}
+/* sponsors */
+.sp{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2.5rem}
+.sp div{display:grid;place-items:center;min-height:150px;padding:1rem;border-radius:28px;background:var(--w);color:var(--k);font:400 1.8rem/1.1 'Bagel Fat One';text-align:center;transition:transform .4s cubic-bezier(.3,1.5,.5,1),box-shadow .4s}
+.sp div:hover{transform:translateY(-10px) scale(1.04);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.sp img{max-width:85%;max-height:130px;object-fit:contain}
+/* contact */
+.ct{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2rem}
+.ct a,.ct div{display:block;padding:1.4rem;border-radius:24px;background:var(--p);color:var(--w);text-decoration:none;transition:transform .3s,background .3s;overflow-wrap:anywhere}
+.ct a:hover{background:var(--pk2);transform:translateY(-6px)}
+.ct small{display:block;opacity:.7}
+footer{text-align:center;padding:2.5rem 1rem;background:var(--k);color:var(--w);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.r{opacity:1;transform:none}.clip img{clip-path:none}nav{transform:none}}
+
+nav{padding-right:clamp(4.5rem,8vw,6rem)}
+#lang{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:60;border:0;border-radius:99px;padding:.45rem .9rem;background:var(--pk);color:var(--k);font:700 .9rem Outfit,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35);transition:transform .25s}
+#lang:hover{transform:scale(1.1) rotate(-4deg)}
+.tba{display:inline-block;margin-top:.6rem;font-size:.9rem;color:var(--pk);text-decoration:none;border-bottom:1px solid;transition:color .2s}.tba:hover{color:var(--w)}
+.game{max-width:360px;margin:2rem auto 0}
+.hud{display:flex;justify-content:space-between;margin-bottom:.6rem;font-weight:700}.hud b{color:var(--pk);font:400 1.3rem 'Bagel Fat One'}
+.cw{position:relative}.cw canvas{width:100%;height:auto;display:block;image-rendering:pixelated;border-radius:20px;border:4px solid var(--pk);touch-action:none;background:#5db75d}
+.gov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(10,10,10,.6);border-radius:16px;font:400 1.8rem 'Bagel Fat One';color:var(--w)}
+.gov b{font-weight:400}.gov .cta{animation:none;margin:0;border:0;cursor:pointer;font:700 1.1rem Outfit,sans-serif}
+.dp{display:grid;grid-template-columns:repeat(3,64px);grid-template-areas:". u ." "l d r";gap:8px;justify-content:center;margin-top:1rem}
+.dp button{width:64px;height:56px;border:0;border-radius:16px;background:var(--p);color:var(--w);font-size:1.4rem;cursor:pointer;touch-action:manipulation}.dp button:active{background:var(--pk2)}
+
+.roll{position:relative;margin-top:2.5rem;padding:44px 0;background:#141414;overflow:hidden;border-block:3px solid #000}
+.roll:before,.roll:after{content:"";position:absolute;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,transparent 0 10px,#efece6 10px 24px,transparent 24px 34px);opacity:.85}
+.roll:before{top:15px}.roll:after{bottom:15px}
+.track{display:flex;width:max-content;animation:roll 80s linear infinite}
+.roll:hover .track,.roll:focus-within .track{animation-play-state:paused}
+@keyframes roll{to{transform:translateX(-50%)}}
+.fr{position:relative;flex:none;height:min(62vw,330px);margin:0 18px 0 0;border-radius:6px;overflow:hidden;cursor:pointer;background:#000;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.fr:hover,.fr:focus-visible{transform:scale(1.05) rotate(-1deg);z-index:2}
+.fr img{height:100%;width:auto;display:block}
+.fr i{position:absolute;left:8px;top:6px;font:700 .8rem ui-monospace,monospace;color:#f6c343;text-shadow:0 1px 3px #000}
+.fr figcaption{position:absolute;inset:auto 0 0;padding:1.8rem .7rem .5rem;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:.85rem;color:var(--w);opacity:0;transition:opacity .3s}
+.fr:hover figcaption,.fr:focus-visible figcaption{opacity:1}
+#lb{position:fixed;inset:0;z-index:100;display:none;flex-direction:column;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,.93)}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:78vh;border-radius:12px}
+#lb p{color:var(--w);margin:.9rem 0 0;text-align:center}
+#lb button{position:absolute;border:0;border-radius:50%;width:48px;height:48px;background:var(--pk);color:var(--k);font:700 1.6rem/1 Outfit,sans-serif;cursor:pointer}
+.lbx{top:calc(env(safe-area-inset-top,0px) + 12px);right:14px}.lbn{left:10px;top:50%}.lbn.r2{left:auto;right:10px}
+@media(prefers-reduced-motion:reduce){.roll{overflow-x:auto}}
+
+.tank{position:relative;margin-top:2rem;height:clamp(340px,62vw,480px);border-radius:28px;overflow:hidden;border:4px solid rgba(185,140,255,.5);background:linear-gradient(#8fd8ff 0,#3b8ed0 35%,#1b4d8f 70%,#142a5c 100%);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.tank .bg{position:absolute;inset:0;width:100%;height:100%}
+.ray{position:absolute;top:-10%;width:16%;height:120%;background:linear-gradient(rgba(255,255,255,.4),transparent 75%);transform:rotate(14deg);filter:blur(6px);animation:ray 7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes ray{to{opacity:.3;transform:rotate(19deg) translateX(24px)}}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite alternate}
+@keyframes sway{to{transform:rotate(6deg)}}
+#fish{position:absolute;inset:0;--w:84px}
+.ax{position:absolute;left:0;top:0;width:var(--w);will-change:transform}
+.ax .bd{position:relative;width:100%;aspect-ratio:420/499}
+.ax .bd img{width:100%;height:100%;display:block}.ax .bd svg{position:absolute;inset:0;width:100%;height:100%}
+.nt{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);white-space:nowrap;padding:.1rem .65rem;border-radius:99px;background:rgba(10,10,10,.78);color:var(--w);font:700 .78rem Outfit,sans-serif}
+.ax.me .nt{background:var(--pk);color:#000}.ax.me .bd{filter:drop-shadow(0 0 10px #fff)}
+.tcount{position:absolute;left:14px;bottom:12px;padding:.3rem .9rem;border-radius:99px;background:rgba(10,10,10,.6);color:var(--w);font-size:.9rem}.tcount b{color:var(--pk)}
+.tempty{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:400 1.6rem 'Bagel Fat One';text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.tb{position:absolute;bottom:-20px;border-radius:50%;border:2px solid rgba(255,255,255,.6);animation:tb var(--t,9s) linear infinite;pointer-events:none}
+@keyframes tb{to{transform:translateY(-520px);opacity:0}}
+.pnote{margin:.8rem auto 0;text-align:center;font-size:.85rem;opacity:.7;max-width:none}
+.adopt{display:grid;grid-template-columns:240px 1fr;gap:2rem;margin-top:1.5rem;padding:1.6rem;border-radius:28px;background:rgba(239,236,230,.08);border:2px solid rgba(239,236,230,.2);align-items:center}
+@media(max-width:760px){.adopt{grid-template-columns:1fr}}
+.pv{display:grid;place-items:center;padding:3rem 1rem 1.4rem;border-radius:20px;background:linear-gradient(#8fd8ff,#1b4d8f)}
+.pv .ax{position:relative;--w:130px}
+.adopt label{display:block;margin:1rem 0 .4rem;font-weight:700;color:var(--pk)}.adopt label:first-child{margin-top:0}
+.adopt input{width:100%;max-width:320px;padding:.7rem 1rem;border-radius:14px;border:2px solid rgba(239,236,230,.3);background:#fff;color:var(--k);font:500 1rem Outfit,sans-serif}
+.row{display:flex;flex-wrap:wrap;gap:.5rem}
+.sw{width:38px;height:38px;border-radius:50%;border:3px solid transparent;cursor:pointer;background:var(--c);transition:transform .2s}.sw:hover{transform:scale(1.15)}.sw[aria-pressed=true]{border-color:#fff;box-shadow:0 0 0 3px var(--pk)}
+.chip{padding:.45rem 1rem;border-radius:99px;border:2px solid rgba(239,236,230,.4);background:transparent;color:var(--w);font:700 .95rem Outfit,sans-serif;cursor:pointer;transition:background .2s}.chip:hover{background:rgba(239,236,230,.15)}.chip[aria-pressed=true]{background:var(--pk);color:#000;border-color:var(--pk)}
+.adopt .cta{margin-top:1.4rem}.amsg{min-height:1.4em;margin:.6rem 0 0;color:#ffb4c8;font-weight:700}
+.p-p2{background-image:url(img/ajolote-pose-p2.png);--ar:201/230}
+.p-p1{background-image:url(img/ajolote-pose-p1.png);--ar:230/128}
+.p-p3{background-image:url(img/ajolote-pose-p3.png);--ar:248/300}
+.p-p5{background-image:url(img/ajolote-pose-p5.png);--ar:192/230}
+.p-p4{background-image:url(img/ajolote-pose-p4.png);--ar:226/230}
+.p-p7{background-image:url(img/ajolote-pose-p7.png);--ar:230/226}
+.p-p6{background-image:url(img/ajolote-pose-p6.png);--ar:224/230}
+.p-p8{background-image:url(img/ajolote-pose-p8.png);--ar:219/229}
+.px{display:block;flex:none;width:var(--s,90px);aspect-ratio:var(--ar);background-position:center;background-size:contain;background-repeat:no-repeat;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.px.axo{height:auto}.hero .px.axo{z-index:4}.hero .px.axo,.strip .px.axo{pointer-events:auto}.hero{position:relative}
+@keyframes hop{0%{transform:translateY(0) rotate(-5deg)}100%{transform:translateY(-9px) rotate(5deg)}}
+@keyframes wvv{50%{transform:rotate(8deg)}}
+@keyframes swimr{to{right:110%}}
+.px.wv{transform-origin:50% 95%;animation:bob var(--t,5s) ease-in-out infinite,wvv 1.4s ease-in-out infinite}
+.wv2{transform-origin:50% 95%;animation:wvv 1.2s ease-in-out infinite}
+.strip .axo.wk{animation:swim var(--d,18s) linear infinite,hop .45s ease-in-out infinite alternate}
+.strip .axo.rl{left:auto;right:-120px}.strip .axo.wk.rl{animation:swimr var(--d,18s) linear infinite,hop .45s ease-in-out infinite alternate}
+.tlw{filter:hue-rotate(-70deg) saturate(1.1);position:absolute;left:-14px;top:0;--s:46px;z-index:3;transition:top .25s linear;animation:hop .45s ease-in-out infinite alternate}
+.fol{position:absolute;left:0;top:0;--s:84px;z-index:5;pointer-events:none;cursor:default}
+footer .fax{position:absolute;top:8px;left:50%;translate:-50% 0;--s:78px}
+@keyframes fwalk{from{left:-12%}to{left:50%}}
+footer .fax.walkin{animation:fwalk 3s ease-out both,hop .45s ease-in-out 6 alternate}
+footer .fax.idle{animation:hop 1.2s ease-in-out infinite alternate}
+.sbub{position:fixed;z-index:80;transform:translate(-50%,-100%);padding:.35rem .8rem;border-radius:16px;background:#fff;color:#111;font:700 .85rem Outfit,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.35);animation:sb 2.3s both;pointer-events:none;max-width:260px;text-align:center;line-height:1.35}
+.sbub:after{content:"";position:absolute;left:50%;top:100%;margin-left:-6px;border:6px solid transparent;border-top-color:#fff}
+@keyframes sb{0%{opacity:0;transform:translate(-50%,-70%) scale(.6)}12%{opacity:1;transform:translate(-50%,-100%) scale(1)}85%{opacity:1}100%{opacity:0;transform:translate(-50%,-135%)}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ax" viewBox="0 0 420 499"><image href="img/ajolote-frente.png" width="420" height="499"/></symbol></svg>
+
+<nav id="nav"><b><img src="img/logo.png" alt="">Quantum Force 8740</b><div><a href="#equipo">Equipo</a><a href="#trayectoria">Trayectoria</a><a href="#premios">Premios</a><a href="#ftc">FTC</a><a href="#galeria">Galería</a><a href="#pecera">Pecera</a><a href="#gracias">Patrocinadores</a><a href="#contacto">Contacto</a></div></nav>
+
+<header class="hero" id="top">
+<div class="orbit"><i></i><i></i><i></i></div>
+<i class="px axo p-p4" style="--s:104px;left:6%;top:24%;--t:5s"></i>
+<i class="px axo wv p-p2" style="--s:96px;right:8%;top:18%;--t:6.5s"></i>
+<i class="px axo wv p-p6" style="--s:96px;left:12%;bottom:12%;--t:7s"></i>
+<i class="px axo p-p7" style="--s:92px;right:14%;bottom:16%;--t:5.5s"></i><i class="px fol p-p1" id="fol"></i>
+<div style="position:relative">
+<img class="logo" src="img/logo.png" alt="Logo de Quantum Force 8740">
+<h1 aria-label="Quantum Force"></h1>
+<p>Equipo FRC #8740 de Prepa Tecmilenio, Nuevo León, México.<br>Cinco temporadas construyendo robots y personas.</p>
+<a class="cta" href="#equipo">Conoce al equipo</a></div>
+</header>
+
+<div class="strip"><i class="px axo p-p1" style="--d:16s;--s:120px"></i></div>
+
+<section id="equipo" class="purple"><div class="wrap">
+<div class="two"><div>
+<h2 class="r up">Somos Quantum Force</h2>
+<p class="r up" style="--d:.15s">Somos un equipo de 31 estudiantes de Prepa Tecmilenio, en Nuevo León. Desde 2022 diseñamos, programamos y construimos robots para competir en FIRST Robotics Competition (FRC).</p>
+<p class="r up" style="--d:.3s">Además mentoreamos a dos equipos de FIRST Tech Challenge (FTC). Queremos que FIRST llegue a muchos más jóvenes.</p></div>
+<div class="photo clip" style="box-shadow:12px 12px 0 var(--pk)"><img src="img/integrantes-de-quantum-force-con-su-robo.jpg" alt="Integrantes de Quantum Force con su robot y peluches de ajolote en un torneo"></div></div>
+<div class="stats">
+<div class="stat r z"><strong data-n="2022">0</strong>año de fundación</div>
+<div class="stat r z" style="--d:.1s"><strong data-n="31">0</strong>estudiantes</div>
+<div class="stat r z" style="--d:.2s"><strong data-n="5">0</strong>temporadas FRC</div>
+<div class="stat r z" style="--d:.3s"><strong data-n="3">0</strong>equipos FIRST bajo nuestra comunidad</div>
+</div></div></section>
+
+<div class="strip pu"><i class="px axo wk rl p-p5" style="--d:24s;--s:62px;top:8px"></i></div>
+
+<section id="trayectoria" class="dark"><div class="wrap">
+<h2 class="r up">Cinco temporadas, un mismo equipo</h2>
+<p class="r up" style="--d:.1s">Nuestra trayectoria en FRC, año por año. La sexta temporada nos espera: ya estamos registrados para un regional de 2027.</p>
+<div class="tl" id="tl"><div class="line" id="line"></div><i class="px tlw p-p7" id="tlw"></i>
+<div class="it r l"><h3>2022</h3><div><h4>RAPID REACT · Año rookie</h4><p>Ranking 29 en nuestro primer regional.</p><span class="tag">Rookie Highest Seed</span><span class="tag">Rookie Inspiration Award</span></div></div>
+<div class="it r l"><h3>2023</h3><div><h4>CHARGED UP</h4><p>Ranking 19 en el regional.</p><span class="tag">Team Spirit Award</span></div></div>
+<div class="it r l"><h3>2024</h3><div><h4>CRESCENDO</h4><p>Ranking 40 en el regional.</p></div></div>
+<div class="it r l"><h3>2025</h3><div><h4>REEFSCAPE</h4><p>Ranking 20 en el regional.</p><span class="tag">Dean's List Finalist</span></div></div>
+<div class="it r l"><h3>2026</h3><div><h4>REBUILT · Dos regionales</h4><p>Primer regional: ranking 25 y segundo equipo elegido por la alianza 4.</p><p>Segundo regional: ranking 15 y capitanes de la alianza 8.</p><span class="tag">Imagery Award</span><span class="tag">Innovation in Control Award</span></div></div>
+</div></div></section>
+
+<section class="purple" style="padding-top:0;padding-bottom:0"><div class="photo clip big" style="box-shadow:none;border-radius:0 0 40px 40px;max-width:none;margin:0"><img src="img/dos-integrantes-de-quantum-force-mueven-.jpg" alt="Dos integrantes de Quantum Force mueven el robot 8740 en su carrito hacia la cancha"></div></section>
+
+<section id="premios"><div class="wrap">
+<h2 class="r up" style="color:var(--p)">Premios FIRST</h2>
+<p class="r up">Reconocimientos a nuestro trabajo en equipo, liderazgo estudiantil, creatividad e innovación técnica. <b>Toca un premio para ver qué significa.</b></p>
+<div class="awards">
+<div class="aw k r z" style="--d:0.0s" tabindex="0" role="button" aria-expanded="false"><i class="pl">+</i><b>2022</b><span>Rookie Highest Seed</span><div class="more"><p>Se da al equipo novato (rookie) que termina mejor clasificado en las rondas de clasificación del evento. Reconoce un gran desempeño en la cancha desde el primer año.</p></div></div>
+<div class="aw k r z" style="--d:0.1s" tabindex="0" role="button" aria-expanded="false"><i class="pl">+</i><b>2022</b><span>Rookie Inspiration Award</span><div class="more"><p>Celebra al equipo novato que mejor ha adoptado la misión de FIRST: dar a conocer la robótica en su escuela y su comunidad y crecer con rapidez como equipo.</p></div></div>
+<div class="aw k r z" style="--d:0.2s" tabindex="0" role="button" aria-expanded="false"><i class="pl">+</i><b>2023</b><span>Team Spirit Award</span><div class="more"><p>Honra al equipo que muestra un entusiasmo y un espíritu extraordinarios por FIRST y por la competencia, y contagia ese ánimo a todos.</p></div></div>
+<div class="aw k r z" style="--d:0.3s" tabindex="0" role="button" aria-expanded="false"><i class="pl">+</i><b>2025</b><span>Dean's List Finalist Award</span><div class="more"><p>Reconoce a estudiantes líderes que se distinguen por su liderazgo y su compromiso con su equipo, con FIRST y con su comunidad.</p></div></div>
+<div class="aw k r z" style="--d:0.4s" tabindex="0" role="button" aria-expanded="false"><i class="pl">+</i><b>2026</b><span>Imagery Award</span><div class="more"><p>Premia a los equipos que combinan un diseño visual atractivo con buena ingeniería: robot, pits, uniformes y marca se ven coherentes y cuidados.</p></div></div>
+<div class="aw k r z" style="--d:0.5s" tabindex="0" role="button" aria-expanded="false"><i class="pl">+</i><b>2026</b><span>Innovation in Control Award</span><div class="more"><p>Reconoce el uso innovador de sensores, visión, software y sistemas de control para dar al robot funciones únicas y efectivas.</p></div></div>
+</div></div></section>
+
+<div class="strip wh"><i class="px axo wk p-p4" style="--d:20s;--s:66px;top:6px"></i></div>
+
+<section id="ftc" class="dark"><div class="wrap">
+<h2 class="r up">También formamos equipos FTC</h2>
+<p class="r up" style="--d:.1s">Mentoramos y supervisamos a dos equipos de FIRST Tech Challenge (FTC). Así más jóvenes viven la robótica.</p>
+<div class="what r up"><div><h3 style="font-size:1.8rem;color:var(--pk);margin-bottom:.6rem">¿Qué es FTC?</h3><p style="margin:0">FIRST Tech Challenge es el programa de FIRST para estudiantes de grados 7 a 12. Cada equipo diseña, construye y programa un robot compacto para un juego nuevo cada temporada, compite en alianzas con otros equipos y aprende ingeniería, programación y trabajo en equipo.</p></div><div class="lg"><img src="img/logo-de-first-tech-challenge.png" alt="Logo de FIRST Tech Challenge"></div></div>
+<div class="teams">
+<div class="tm r l"><img src="img/logo-de-quantum-robolots-24831.png" alt="Logo de Quantum Robolots 24831"><h3>Quantum Robolots</h3><span class="num">#24831</span><p style="margin:.3rem auto 0">FIRST Tech Challenge · 2023 a 2026</p></div>
+<div class="tm r rt"><img src="img/logo-de-quantum-robohawks-28076.png" alt="Logo de Quantum Robohawks 28076"><h3>Quantum Robohawks</h3><span class="num">#28076</span><p style="margin:.3rem auto .5rem">FIRST Tech Challenge · 2024 a 2026</p><span class="tag" style="background:var(--p);color:var(--w)">Pase al campeonato nacional 2027</span></div>
+</div></div></section>
+
+<section class="purple"><div class="wrap"><div class="two">
+<div><h2 class="r up">Más que robots</h2><div style="display:grid;gap:1.2rem;margin-top:1.5rem">
+<div class="aw r up" style="background:var(--k)"><span>Formación técnica</span><p>Cursos en línea de diseño 3D con Onshape y de programación en C++.</p></div>
+<div class="aw r up" style="--d:.15s;background:var(--pd)"><span>Impacto social</span><p>Proyectos con La Conve y Casa Monarca.</p></div></div></div>
+<div class="photo clip" style="box-shadow:12px 12px 0 var(--pk);max-width:420px;margin:0 auto"><img src="img/integrantes-de-quantum-force-junto-a-su-.jpg" alt="Integrantes de Quantum Force junto a su robot y el banner del equipo"></div>
+</div></div></section>
+
+<section id="galeria" class="dark" style="padding-inline:0;background:#050505"><div class="wrap" style="padding-inline:clamp(1.2rem,6vw,5rem)"><h2 class="r up">Nuestro rollo de fotos</h2><p class="r up" style="--d:.1s">Momentos de nuestros torneos: pits, partidos y mucha diversión. Toca una foto para verla en grande.</p></div>
+<div class="roll r up"><div class="track" id="trk"><figure class="fr" data-i="0" tabindex="0" role="button"><img src="img/integrantes-de-quantum-force-junto-al-ro.jpg" alt="Integrantes de Quantum Force junto al robot en los pits" loading="lazy"><i>01</i><figcaption>El equipo en los pits</figcaption></figure><figure class="fr" data-i="1" tabindex="0" role="button"><img src="img/integrante-con-el-premio-innovation-in-c.jpg" alt="Integrante con el premio Innovation in Control 2026" loading="lazy"><i>02</i><figcaption>Premio Innovation in Control, City of Fountains Regional</figcaption></figure><figure class="fr" data-i="2" tabindex="0" role="button"><img src="img/robot-8740-en-un-partido.jpg" alt="Robot 8740 en un partido" loading="lazy"><i>03</i><figcaption>Partido en la cancha</figcaption></figure><figure class="fr" data-i="3" tabindex="0" role="button"><img src="img/integrantes-trabajando-en-el-robot-en-lo.jpg" alt="Integrantes trabajando en el robot en los pits" loading="lazy"><i>04</i><figcaption>Trabajo en los pits</figcaption></figure><figure class="fr" data-i="4" tabindex="0" role="button"><img src="img/robot-8740-con-un-peluche-de-ajolote-azu.jpg" alt="Robot 8740 con un peluche de ajolote azul encima" loading="lazy"><i>05</i><figcaption>Axo azul vigilando el robot</figcaption></figure><figure class="fr" data-i="5" tabindex="0" role="button"><img src="img/integrantes-llevando-el-robot-en-su-carr.jpg" alt="Integrantes llevando el robot en su carrito" loading="lazy"><i>06</i><figcaption>Llevando el robot a la cancha</figcaption></figure><figure class="fr" data-i="6" tabindex="0" role="button"><img src="img/robot-8740-con-su-bumper-rojo.jpg" alt="Robot 8740 con su bumper rojo" loading="lazy"><i>07</i><figcaption>El robot 8740 antes de competir</figcaption></figure><figure class="fr" data-i="7" tabindex="0" role="button"><img src="img/etiqueta-de-inspeccion-2026-del-equipo-8.jpg" alt="Etiqueta de inspección 2026 del equipo 8740" loading="lazy"><i>08</i><figcaption>Inspección 2026</figcaption></figure></div></div></section>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button class="lbx" id="lbx" aria-label="Cerrar">✕</button><button class="lbn" id="lbp" aria-label="Anterior">‹</button><img id="lbi" alt=""><button class="lbn r2" id="lbn" aria-label="Siguiente">›</button><p id="lbc"></p></div>
+<section id="pecera" class="dark" style="background:linear-gradient(var(--k),#0b1f3a)"><div class="wrap">
+<div style="text-align:center"><h2 class="r up">Adopta un ajolote</h2><p class="r up" style="margin:0 auto;--d:.1s">Ponle nombre, elige su color y su accesorio. Se queda nadando en nuestra pecera con todos los que ya adoptaron uno.</p></div>
+<div class="tank r z" id="tank"><svg class="bg" viewBox="0 0 800 480" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ead9a8"/><stop offset="1" stop-color="#c7a46a"/></linearGradient></defs>
+<path d="M0 425 Q120 395 260 420 T520 415 T800 405 V480 H0Z" fill="url(#sd)"/>
+<g class="sway" fill="#2f9e5a"><path d="M90 440 C65 380 112 335 84 270 C124 335 104 390 118 440Z"/><path d="M130 445 C115 400 145 370 128 320 C158 372 150 405 158 445Z" fill="#43b86a"/></g>
+<g class="sway" fill="#2a8f55" style="animation-delay:-2s"><path d="M610 435 C590 380 636 340 612 280 C650 340 630 390 646 435Z"/><path d="M660 440 C648 395 676 372 662 330 C690 376 682 405 690 440Z" fill="#43b86a"/></g>
+<ellipse cx="380" cy="440" rx="46" ry="20" fill="#7c6a8a"/><ellipse cx="410" cy="436" rx="26" ry="14" fill="#9585a3"/><ellipse cx="720" cy="438" rx="40" ry="16" fill="#7c6a8a"/>
+<ellipse cx="150" cy="26" rx="46" ry="12" fill="#3fae5a"/><ellipse cx="560" cy="20" rx="56" ry="13" fill="#3fae5a"/><circle cx="565" cy="14" r="9" fill="#f7a8c8"/><circle cx="565" cy="14" r="4" fill="#facc15"/><ellipse cx="700" cy="30" rx="38" ry="10" fill="#34a050"/></svg>
+<i class="ray" style="left:12%"></i><i class="ray" style="left:46%;animation-delay:-3s"></i><i class="ray" style="left:74%;animation-delay:-5s"></i>
+<div id="fish"></div><div class="tcount"><b id="tcn">0</b> <span>ajolotes adoptados</span></div><div class="tempty" id="tempty">¡Sé el primero en adoptar!</div></div>
+<p id="pnote" class="pnote" style="display:none">Modo demostración: configura Firebase para que las adopciones se guarden para todos los visitantes.</p>
+<div class="adopt"><div class="pv" id="pv"></div><div id="aform"><form id="af" autocomplete="off">
+<label for="an">Nombre</label><input id="an" maxlength="14" placeholder="Axo" required>
+<label>Color</label><div class="row" id="cols"></div>
+<label>Accesorio</label><div class="row" id="accs"></div>
+<button class="cta" type="submit" style="animation:none;border:0;cursor:pointer;font:700 1.05rem Outfit,sans-serif">Adoptar</button><p id="amsg" class="amsg" aria-live="polite"></p></form></div>
+<div id="athx" style="display:none"><h3 style="font-size:1.8rem;color:var(--pk)">¡Gracias!</h3><p>Tu ajolote <b class="uname" id="un"></b> ya nada en la pecera. ¡Gracias por adoptar!</p></div></div></div></section>
+<section id="gracias" class="dark" style="background:radial-gradient(circle at 50% 0,var(--p),var(--k) 70%)"><div class="wrap" style="text-align:center">
+<svg class="axo" style="--s:90px;position:relative;display:block;margin:0 auto 1rem"><use href="#ax"/></svg>
+<h2 class="r up">¡Gracias, patrocinadores!</h2>
+<p class="r up" style="margin:0 auto;--d:.1s">Gracias a su apoyo, nuestros estudiantes construyen, compiten y aprenden. Este equipo es posible gracias a ustedes.</p>
+<div class="sp">
+<div class="r z"><img src="img/john-deere.png" alt="John Deere"></div><div class="r z" style="--d:.15s;background:#000"><img src="img/magna.png" alt="Magna" style="border-radius:12px"></div><div class="r z" style="--d:.3s"><img src="img/gene-haas-foundation.png" alt="Gene Haas Foundation"></div>
+</div></div></section>
+
+<section id="contacto"><div class="wrap"><div class="two"><div>
+<h2 class="r up" style="color:var(--p)">Hablemos <i class="px wv2 p-p6" style="--s:66px;display:inline-block;vertical-align:middle;margin-left:.3rem"></i></h2>
+<p class="r up">¿Quieres conocer al equipo, visitar nuestro taller o colaborar con nosotros? Escríbenos.</p>
+<div class="ct">
+<a class="r up" href="mailto:quantumforce8740@gmail.com"><small>Correo</small>quantumforce8740@gmail.com</a>
+<a class="r up" style="--d:.1s" href="https://instagram.com/quantumf.lt" target="_blank" rel="noopener"><small>Instagram</small>@quantumf.lt</a>
+<a class="r up" style="--d:.2s" href="tel:+528123645840"><small>Teléfono</small>+52 81 2364 5840</a>
+<div class="r up" style="--d:.3s"><small>Ubicación</small>Preparatoria Tecmilenio Las Torres, Av. Paseo del Acueducto #2610, Col. Del Paseo Residencial, Nuevo León, México</div>
+</div><div class="photo clip" style="box-shadow:12px 12px 0 var(--pk);max-width:420px;margin:0 auto"><img src="img/integrante-de-quantum-force-sosteniendo-.jpg" alt="Integrante de Quantum Force sosteniendo un peluche de ajolote"></div></div></div></section>
+
+<footer style="position:relative;overflow:hidden;padding-top:6rem"><i class="px fax p-p8" id="fax"></i>Quantum Force 8740 · FIRST Robotics Competition · Prepa Tecmilenio</footer>
+
+<script>
+(function(){
+var t="Quantum Force",h=document.querySelector(".hero h1");
+t.split("").forEach(function(c,i){var s=document.createElement("span");s.textContent=c===" "?"\u00a0":c;s.style.animationDelay=(.5+i*.06)+"s";h.appendChild(s)});
+document.querySelectorAll(".aw.k").forEach(function(c){function t(){var o=c.classList.toggle("open");c.setAttribute("aria-expanded",o)}c.addEventListener("click",t);c.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}})});
+var nav=document.getElementById("nav");
+function sc(){nav.classList.toggle("on",scrollY>window.innerHeight*.6);
+var tl=document.getElementById("tl"),r=tl.getBoundingClientRect(),p=Math.min(Math.max((innerHeight*.6-r.top)/r.height,0),1);
+document.getElementById("line").style.height=(p*100)+"%"}
+addEventListener("scroll",sc,{passive:true});sc();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");
+e.target.querySelectorAll("[data-n]").forEach(count);io.unobserve(e.target)}})},{threshold:.2});
+document.querySelectorAll(".r,.clip").forEach(function(el){io.observe(el)});
+function count(el){var n=+el.dataset.n,s=performance.now();(function f(now){var k=Math.min((now-s)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(s)}
+setTimeout(function(){document.querySelectorAll(".clip").forEach(function(e){e.classList.add("in")})},4000);document.querySelectorAll(".stat").forEach(function(s){io.observe(s)});
+document.querySelectorAll(".hero,#gracias").forEach(function(sec){for(var i=0;i<8;i++){var b=document.createElement("span");b.className="bubble";var z=8+Math.random()*22;
+b.style.cssText="left:"+Math.random()*100+"%;width:"+z+"px;height:"+z+"px;--t:"+(7+Math.random()*8)+"s;animation-delay:-"+Math.random()*10+"s";sec.appendChild(b)}});
+document.querySelectorAll(".strip .axo").forEach(function(a,i){a.style.animationDelay="-"+(i*5)+"s,0s"});
+})();
+</script><script>
+(function(){var trk=document.getElementById("trk"),fr=[].slice.call(trk.children),lb=document.getElementById("lb"),cur=0;
+fr.forEach(function(c){var k=c.cloneNode(true);k.setAttribute("aria-hidden","true");k.tabIndex=-1;trk.appendChild(k)});
+function show(i){cur=(i+fr.length)%fr.length;var f=fr[cur];document.getElementById("lbi").src=f.querySelector("img").src;document.getElementById("lbi").alt=f.querySelector("img").alt;document.getElementById("lbc").textContent=f.querySelector("figcaption").textContent;lb.classList.add("on")}
+function close(){lb.classList.remove("on")}
+trk.addEventListener("click",function(e){var f=e.target.closest(".fr");if(f)show(+f.dataset.i)});
+trk.addEventListener("keydown",function(e){var f=e.target.closest(".fr");if(f&&(e.key==="Enter"||e.key===" ")){e.preventDefault();show(+f.dataset.i)}});
+document.getElementById("lbx").onclick=close;document.getElementById("lbp").onclick=function(){show(cur-1)};document.getElementById("lbn").onclick=function(){show(cur+1)};
+lb.addEventListener("click",function(e){if(e.target===lb)close()});
+document.addEventListener("keydown",function(e){if(!lb.classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+})();
+</script>
+<script>
+window.FIREBASE_CONFIG=null;
+(function(){
+var tank=document.getElementById("tank");if(!tank)return;
+var layer=document.getElementById("fish"),cfg=window.FIREBASE_CONFIG,src=document.querySelector("#ax image").getAttribute("href"),LK=(cfg&&cfg.projectId)?"myAx":"myAxDemo",IK=(cfg&&cfg.projectId)?"myId":"myIdDemo";
+var FILT={rosa:"",azul:"hue-rotate(240deg)",verde:"hue-rotate(145deg)",morado:"hue-rotate(-70deg)",dorado:"hue-rotate(60deg) saturate(1.4)"};
+var SW={rosa:"#f7a8c8",azul:"#7aa7ff",verde:"#7bd88f",morado:"#b58cff",dorado:"#f4c95d"};
+var ACC={ninguno:"",
+lentes:'<rect x="86" y="126" width="84" height="58" rx="16" fill="rgba(160,255,200,.3)" stroke="#2f9e5a" stroke-width="7"/><rect x="250" y="126" width="84" height="58" rx="16" fill="rgba(160,255,200,.3)" stroke="#2f9e5a" stroke-width="7"/><path d="M170 152H250" stroke="#2f9e5a" stroke-width="7"/>',
+sombrero:'<path d="M142 100Q146 22 210 20Q274 22 278 100Z" fill="#c9954f" stroke="#7a4f24" stroke-width="5"/><rect x="143" y="76" width="134" height="14" fill="#7a4f24"/><ellipse cx="210" cy="100" rx="140" ry="22" fill="#b9824a" stroke="#7a4f24" stroke-width="5"/>',
+gorra:'<path d="M118 104Q124 36 210 32Q296 36 302 104Z" fill="#141414" stroke="#000" stroke-width="4"/><ellipse cx="210" cy="106" rx="112" ry="15" fill="#222"/><circle cx="210" cy="68" r="13" fill="#efece6"/><circle cx="210" cy="68" r="5" fill="#4b1a7a"/>'};
+var NAMES={rosa:"Rosa",azul:"Azul",verde:"Verde",morado:"Morado",dorado:"Dorado"},ANAMES={ninguno:"Ninguno",lentes:"Lentes",sombrero:"Sombrero",gorra:"Gorra"};
+var sel={color:"rosa",acc:"ninguno"},F=[],vis=false,T=0,last=0,fb=null,local=[],myId="";
+try{myId=localStorage.getItem(IK)||""}catch(e){}
+function build(d,st){var e=document.createElement("div");e.className="ax"+(st?" st":"");var n=document.createElement("div");n.className="nt";n.textContent=d.name;
+var b=document.createElement("div");b.className="bd";var im=document.createElement("img");im.alt="";im.src=src;im.style.filter=FILT[d.color]||"";b.appendChild(im);
+var s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("viewBox","0 0 420 499");s.innerHTML=ACC[d.acc]||"";b.appendChild(s);e.appendChild(n);e.appendChild(b);return{e:e,b:b}}
+function W(){return Math.round(Math.max(60,Math.min(96,tank.clientWidth/7)))}
+function add(d){var o=build(d),th=tank.clientHeight,tw=tank.clientWidth,w=W();var f={id:d.id,e:o.e,b:o.b,x:Math.random()*tw,y:th*.2+Math.random()*(th*.48),vx:(Math.random()<.5?-1:1)*(16+Math.random()*28),ph:Math.random()*6.28};
+if(d.id&&d.id===myId)f.e.classList.add("me");layer.appendChild(f.e);F.push(f)}
+function sync(a){layer.style.setProperty("--w",W()+"px");var ids={};a.forEach(function(d){ids[d.id]=1;if(!F.some(function(f){return f.id===d.id}))add(d)});
+F=F.filter(function(f){if(ids[f.id])return true;f.e.remove();return false});
+document.getElementById("tcn").textContent=F.length;document.getElementById("tempty").style.display=F.length?"none":"grid"}
+function loop(t){var dt=Math.min(.05,(t-last)/1e3||0);last=t;if(vis){T+=dt;var tw=tank.clientWidth,w=W();
+F.forEach(function(f){f.x+=f.vx*dt;if(f.vx>0&&f.x>tw+10)f.x=-w-10;if(f.vx<0&&f.x<-w-10)f.x=tw+10;
+f.e.style.transform="translate3d("+f.x.toFixed(1)+"px,"+(f.y+Math.sin(T*1.4+f.ph)*7).toFixed(1)+"px,0)";f.e.style.zIndex=Math.round(f.y);
+f.b.style.transform="scaleX("+(f.vx>0?1:-1)+") rotate("+(Math.sin(T*3+f.ph)*5).toFixed(1)+"deg)"})}requestAnimationFrame(loop)}
+new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(tank);
+addEventListener("resize",function(){layer.style.setProperty("--w",W()+"px")});
+for(var i=0;i<12;i++){var u=document.createElement("span"),z=6+Math.random()*14;u.className="tb";u.style.cssText="left:"+Math.random()*100+"%;width:"+z+"px;height:"+z+"px;--t:"+(7+Math.random()*8)+"s;animation-delay:-"+Math.random()*10+"s";tank.appendChild(u)}
+/* formulario */
+var inp=document.getElementById("an"),pv=document.getElementById("pv"),amsg=document.getElementById("amsg");
+function tr(){if(window.__tr)window.__tr()}
+function say(s){amsg.textContent=s;tr()}
+function paint(){pv.innerHTML="";pv.appendChild(build({name:inp.value.trim().slice(0,14)||"Axo",color:sel.color,acc:sel.acc},true).e)}
+function chips(id,map,key,sw){var c=document.getElementById(id);Object.keys(map).forEach(function(k){var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed",k===sel[key]);
+if(sw){b.className="sw";b.style.setProperty("--c",SW[k]);b.setAttribute("aria-label",NAMES[k])}else{b.className="chip";b.textContent=ANAMES[k]}
+b.onclick=function(){sel[key]=k;[].forEach.call(c.children,function(x){x.setAttribute("aria-pressed",x===b)});paint()};c.appendChild(b)})}
+chips("cols",SW,"color",true);chips("accs",ACC,"acc",false);inp.addEventListener("input",paint);paint();
+var BADX=["puta","puto","culo","joto","fuck","shit","dick","cunt","fag","slut","nazi","pene","pito","teta","tetas","sexo"],BADS=["pendej","cabron","chingad","chinga","verga","mierda","maricon","nigger","nigga","bitch","pussy","whore","hitler","porno","violar","puñeta","punet"];
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/0/g,"o").replace(/[1!|]/g,"i").replace(/3/g,"e").replace(/[4@]/g,"a").replace(/[5$]/g,"s")}
+function bad(n){var s=norm(n),t=s.split(/[^a-z]+/).filter(Boolean),j=t.join("");return t.some(function(w){return BADX.indexOf(w)>-1})||BADS.some(function(b){return j.indexOf(b)>-1})}
+function done(id,d){try{localStorage.setItem(IK,id);localStorage.setItem(LK,JSON.stringify(d))}catch(e){}myId=id;F.forEach(function(f){if(f.id===id)f.e.classList.add("me")});thanks(d.name)}
+function thanks(n){document.getElementById("aform").style.display="none";pv.style.display="none";document.getElementById("athx").style.display="block";document.getElementById("un").textContent=n;document.querySelector(".adopt").style.gridTemplateColumns="1fr";tr()}
+document.getElementById("af").addEventListener("submit",function(e){e.preventDefault();
+var n=inp.value.replace(/[^\p{L}\p{N} _.\-]/gu,"").replace(/\s+/g," ").trim().slice(0,14);
+if(!n){say("Escribe un nombre para tu ajolote.");return}if(bad(n)){say("Ese nombre no está permitido, prueba con otro.");return}
+var d={name:n,color:sel.color,acc:sel.acc};amsg.textContent="";
+if(fb){fb.S.addDoc(fb.S.collection(fb.db,"axolotls"),{name:d.name,color:d.color,acc:d.acc,createdAt:fb.S.serverTimestamp()}).then(function(r){done(r.id,d)}).catch(function(){say("No se pudo guardar. Intenta de nuevo.")})}
+else{var id="l"+Date.now();local.push({id:id,name:d.name,color:d.color,acc:d.acc});try{localStorage.setItem("axLocal",JSON.stringify(local))}catch(x){}sync(seed().concat(local));done(id,d)}});
+function seed(){return[["Axo","rosa","gorra"],["Quantum","morado","lentes"],["Átomo","azul","ninguno"],["Chispa","dorado","sombrero"],["Robo","verde","lentes"]].map(function(a,i){return{id:"s"+i,name:a[0],color:a[1],acc:a[2]}})}
+function demo(w){var pn=document.getElementById("pnote");pn.style.display="block";if(w)pn.textContent="No se pudo conectar con Firebase. Revisa la configuración y las reglas (abre la consola del navegador para ver el error).";try{local=JSON.parse(localStorage.getItem("axLocal")||"[]")}catch(e){local=[]}sync(seed().concat(local));tr()}
+try{var m=JSON.parse(localStorage.getItem(LK)||"null");if(m&&m.name)thanks(m.name)}catch(e){}
+if(cfg&&cfg.projectId){(async function(){try{var A=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"),S=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"),db=S.getFirestore(A.initializeApp(cfg));fb={S:S,db:db};
+S.onSnapshot(S.query(S.collection(db,"axolotls"),S.orderBy("createdAt","desc"),S.limit(40)),function(sn){var a=[];sn.forEach(function(x){var v=x.data();if(v&&v.name)a.push({id:x.id,name:v.name,color:v.color,acc:v.acc})});sync(a)},function(er){console.error("Firebase:",er);fb=null;demo("fb")})}catch(e){console.error("Firebase:",e);fb=null;demo("fb")}})()}else demo();
+requestAnimationFrame(loop);
+})();
+</script>
+<script>
+(function(){
+var PH=[["¡Glub glub!","Glub glub!"],["¡No soy un peluche!","I'm not a plushie!"],["¿Ya adoptaste uno?","Have you adopted one yet?"],["¡Ocho siete cuatro cero!","Eight seven four zero!"],["¡Cuidado con los bumpers!","Watch out for the bumpers!"],["¿Tienes hambre? Yo también.","Hungry? Me too."],
+["Dato curioso: puedo regenerar patas, cola y hasta partes del corazón.","Fun fact: I can regrow legs, my tail and even parts of my heart."],
+["Dato curioso: soy de México. Vivo de forma natural en Xochimilco.","Fun fact: I'm from Mexico. I live naturally in Xochimilco."],
+["Dato curioso: mi nombre viene del náhuatl. Atl significa agua.","Fun fact: my name comes from Nahuatl. Atl means water."],
+["Dato curioso: me quedo con cara de renacuajo toda la vida. Se llama neotenia.","Fun fact: I keep my tadpole look all my life. It's called neoteny."],
+["Dato curioso: respiro con estas branquias de plumitas.","Fun fact: I breathe with these feathery gills."],
+["Dato curioso: en la naturaleza estoy en peligro crítico de extinción.","Fun fact: in the wild I'm critically endangered."],
+["Dato curioso: salgo en el billete de 50 pesos mexicanos.","Fun fact: I'm on the Mexican 50-peso bill."],
+["Dato del equipo: Quantum Force nació en 2022.","Team fact: Quantum Force was founded in 2022."],
+["Dato del equipo: somos 31 estudiantes de Prepa Tecmilenio.","Team fact: we are 31 students from Prepa Tecmilenio."],
+["Dato del equipo: en 2022 ganamos el Rookie Inspiration Award.","Team fact: in 2022 we won the Rookie Inspiration Award."],
+["Dato del equipo: en 2026 fuimos capitanes de la alianza 8.","Team fact: in 2026 we were captains of alliance 8."],
+["Dato del equipo: Quantum Robohawks ya tiene pase al nacional de FTC 2027.","Team fact: Quantum Robohawks already qualified for the 2027 FTC nationals."],
+["Dato del equipo: nuestro lema es Embrace change, inspire the future.","Team fact: our motto is Embrace change, inspire the future."],
+["Dato del equipo: nos apoyan John Deere, Magna y la Gene Haas Foundation.","Team fact: John Deere, Magna and the Gene Haas Foundation support us."],
+["Dicen que soy la mascota. Yo digo que soy ingeniero.","They say I'm the mascot. I say I'm an engineer."],
+["No fui yo quien desconectó el cable. Glub.","It wasn't me who unplugged the cable. Glub."],
+["Mi bumper favorito es el rojo. Combina con mis branquias.","My favorite bumper is the red one. It matches my gills."]],bag=[];
+function pick(){if(!bag.length)bag=PH.slice().sort(function(){return Math.random()-.5});return bag.pop()}
+function tr(){if(window.__tr)window.__tr()}
+function speak(el,t){var r=el.getBoundingClientRect(),b=document.createElement("div"),p=t?null:pick();b.className="sbub";b.textContent=t||(document.documentElement.lang==="en"?p[1]:p[0]);
+b.style.left=Math.max(130,Math.min(innerWidth-130,r.left+r.width/2))+"px";b.style.top=Math.max(40,r.top-6)+"px";var d=Math.max(2300,b.textContent.length*75);b.style.animationDuration=d+"ms";document.body.appendChild(b);if(t)tr();setTimeout(function(){b.remove()},d)}
+function turn(el,from,to){el.classList.remove("p-"+from);el.classList.add("p-"+to)}
+document.addEventListener("click",function(e){var el=e.target.closest(".px");if(!el||el.classList.contains("fol"))return;
+try{el.animate([{rotate:"0deg",scale:"1"},{rotate:"360deg",scale:"1.25"},{rotate:"360deg",scale:"1"}],{duration:700,easing:"ease-out"})}catch(x){}
+if(el.id==="fax"&&el.classList.contains("p-p8")){turn(el,"p8","p3");el.classList.remove("walkin");el.classList.add("idle");speak(el,"¡Hola de nuevo!");setTimeout(function(){turn(el,"p3","p8")},3000)}else speak(el)});
+/* ajolote que sigue el cursor en la portada */
+var hero=document.querySelector(".hero"),fol=document.getElementById("fol"),fx=60,fy=120,tx=60,ty=120,dir=1,lp=0,nw=0,hv=true;
+hero.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=hero.getBoundingClientRect();tx=e.clientX-r.left-42;ty=e.clientY-r.top-30;lp=performance.now()});
+new IntersectionObserver(function(es){hv=es[0].isIntersecting}).observe(hero);
+function fl(t){if(hv){if(t-lp>3500&&t>nw){tx=Math.random()*(hero.clientWidth-100);ty=100+Math.random()*(hero.clientHeight-200);nw=t+3200}
+var dx=tx-fx;fx+=dx*.025;fy+=(ty-fy)*.025;if(Math.abs(dx)>4)dir=dx>0?1:-1;
+fol.style.transform="translate("+fx.toFixed(1)+"px,"+fy.toFixed(1)+"px) scaleX("+dir+") rotate("+(Math.sin(t/180)*5).toFixed(1)+"deg)"}requestAnimationFrame(fl)}
+requestAnimationFrame(fl);
+/* ajolote que camina por la línea de tiempo */
+var tl=document.getElementById("tl"),tw=document.getElementById("tlw");
+function ts(){var r=tl.getBoundingClientRect(),p=Math.min(Math.max((innerHeight*.6-r.top)/r.height,0),1);tw.style.top=(p*(r.height-50)).toFixed(0)+"px"}
+addEventListener("scroll",ts,{passive:true});ts();
+/* despedida en el pie de página */
+var fax=document.getElementById("fax");
+new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();fax.classList.add("walkin");
+setTimeout(function(){fax.classList.remove("walkin");turn(fax,"p8","p3");fax.classList.add("idle");speak(fax,"¡Gracias por visitarnos!");setTimeout(function(){turn(fax,"p3","p8")},3500)},3100)}}).observe(fax);
+})();
+</script>
+<button id="lang" aria-label="Español / English">EN</button>
+<script>
+(function(){
+var D=[["No se pudo conectar","Could not connect to Firebase. Check the configuration and rules (open the browser console to see the error)."],["¡No soy","I'm not a plushie!"],["¿Ya adoptaste","Have you adopted one yet?"],["¡Ocho siete","Eight seven four zero!"],["¡Cuidado con","Watch out for the bumpers!"],["¿Tienes hambre","Hungry? Me too."],["¡Gracias por visitarnos","Thanks for visiting!"],["¡Hola de nuevo","Hello again!"],["Pecera|","Aquarium"],["Adopta un ajolote","Adopt an axolotl"],["Ponle nombre","Name it, choose its color and accessory. It stays swimming in our tank with everyone who already adopted one."],["ajolotes adoptados","axolotls adopted"],["¡Sé el primero","Be the first to adopt!"],["Modo demostración","Demo mode: set up Firebase so adoptions are saved for all visitors."],["Nombre|","Name"],["Color|","Color"],["Accesorio|","Accessory"],["Rosa|","Pink"],["Azul|","Blue"],["Verde|","Green"],["Morado|","Purple"],["Dorado|","Gold"],["Ninguno|","None"],["Lentes|","Safety glasses"],["Sombrero|","Cowboy hat"],["Gorra|","Team cap"],["Adoptar|","Adopt"],["Escribe un nombre","Write a name for your axolotl."],["Ese nombre no","That name is not allowed, try another one."],["No se pudo guardar","Could not save. Try again."],["¡Gracias!|","Thank you!"],["Tu ajolote","Your axolotl"],["ya nada en la pecera","is now swimming in the tank. Thanks for adopting!"],["Galería|","Gallery"],["Nuestro rollo","Our film roll"],["Momentos de nuestros","Moments from our tournaments: pits, matches and lots of fun. Tap a photo to see it bigger."],["Premio Innovation","Innovation in Control Award, City of Fountains Regional"],["Inspección 2026","2026 inspection"],["Partido en la cancha","Match on the field"],["El equipo en los pits","The team in the pits"],["Llevando el robot","Taking the robot to the field"],["Axo azul vigilando","Blue Axo keeping watch over the robot"],["El robot 8740 antes","Robot 8740 before competing"],["Trabajo en los pits","Working in the pits"],["Equipo|","Team"],["Trayectoria|","Journey"],["Premios|","Awards"],["Juego|","Game"],["Patrocinadores|","Sponsors"],["Contacto|","Contact"],
+["Equipo FRC #8740","FRC Team #8740 from Prepa Tecmilenio, Nuevo León, Mexico."],["Cinco temporadas construyendo","Five seasons building robots and people."],["Conoce al equipo","Meet the team"],
+["Somos Quantum","We are Quantum Force"],["Somos un equipo","We are a team of 31 students from Prepa Tecmilenio in Nuevo León. Since 2022 we design, program and build robots to compete in FIRST Robotics Competition (FRC)."],
+["Además mentoreamos","We also mentor two FIRST Tech Challenge (FTC) teams. We want FIRST to reach many more young people."],
+["año de fundación","year founded"],["estudiantes|","students"],["temporadas FRC","FRC seasons"],["equipos FIRST bajo","FIRST teams in our community"],
+["Cinco temporadas, un","Five seasons, one team"],["Nuestra trayectoria","Our FRC journey, year by year. Season six awaits: we are already registered for a 2027 regional."],
+["RAPID REACT","RAPID REACT · Rookie year"],["REBUILT","REBUILT · Two regionals"],
+["Ranking 29","Ranked 29th at our first regional."],["Ranking 19","Ranked 19th at the regional."],["Ranking 40","Ranked 40th at the regional."],["Ranking 20","Ranked 20th at the regional."],
+["Primer regional","First regional: ranked 25th and second team picked by alliance 4."],["Segundo regional","Second regional: ranked 15th and captains of alliance 8."],
+["Premios FIRST","FIRST Awards"],["Reconocimientos a","Recognition of our teamwork, student leadership, creativity and technical innovation."],["Toca un premio","Tap an award to see what it means."],
+["Se da al equipo novato","Given to the rookie team that finishes with the best qualification ranking at the event. It recognizes strong performance on the field from the very first year."],
+["Celebra al equipo novato","Celebrates the rookie team that best embraces the FIRST mission: spreading robotics in its school and community while growing quickly as a team."],
+["Honra al equipo","Honors the team that shows extraordinary enthusiasm and spirit for FIRST and the competition, and spreads that energy to everyone."],
+["Reconoce a estudiantes","Recognizes student leaders who stand out for their leadership and commitment to their team, to FIRST and to their community."],
+["Premia a los equipos","Rewards teams that combine attractive visual design with good engineering: robot, pits, uniforms and branding look consistent and polished."],
+["Reconoce el uso","Recognizes the innovative use of sensors, vision, software and control systems to give the robot unique and effective functions."],
+["También formamos","We also grow FTC teams"],["Mentoramos y","We mentor and supervise two FIRST Tech Challenge (FTC) teams. This way more young people experience robotics."],
+["¿Qué es FTC","What is FTC?"],["FIRST Tech Challenge es","FIRST Tech Challenge is the FIRST program for students in grades 7 to 12. Each team designs, builds and programs a compact robot for a new game every season, competes in alliances with other teams, and learns engineering, programming and teamwork."],
+["FIRST Tech Challenge · 2023","FIRST Tech Challenge · 2023 to 2026"],["FIRST Tech Challenge · 2024","FIRST Tech Challenge · 2024 to 2026"],["Pase al campeonato","Qualified for the 2027 national championship"],
+["Más que robots","More than robots"],["Formación técnica","Technical training"],["Cursos en línea","Online courses in 3D design with Onshape and C++ programming."],["Impacto social","Social impact"],["Proyectos con","Projects with La Conve and Casa Monarca."],
+["¡Cruza la cancha","Cross the field with Axo!"],["Ayuda a Axo","Help Axo cross the field without getting hit by robots. Collect gears. Use arrow keys or WASD, swipe, or use the buttons."],
+["Puntos|","Score"],["Récord|","Best"],["Jugar otra vez","Play again"],["Jugar|","Play"],["¡Te atropellaron","Hit by a robot!"],
+["¡Gracias, patro","Thank you, sponsors!"],["Gracias a su apoyo","Thanks to your support, our students build, compete and learn. This team is possible because of you."],
+["Hablemos","Let's talk"],["¿Quieres conocer","Want to meet the team, visit our workshop or collaborate with us? Write to us."],["Correo|","Email"],["Teléfono|","Phone"],["Ubicación|","Location"],
+["Preparatoria Tecmilenio Las","Preparatoria Tecmilenio Las Torres, Av. Paseo del Acueducto #2610, Col. Del Paseo Residencial, Nuevo León, Mexico"],
+["Ver en The Blue","See on The Blue Alliance ↗"],["Todos nuestros","All our results on The Blue Alliance ↗"]];
+document.querySelectorAll(".it").forEach(function(it){var a=document.createElement("a");a.className="tba";a.href="https://www.thebluealliance.com/team/8740/"+it.querySelector("h3").textContent;a.target="_blank";a.rel="noopener";a.textContent="Ver en The Blue Alliance ↗";it.lastElementChild.appendChild(a)});
+var tl=document.getElementById("tl"),b=document.createElement("a");b.className="cta";b.style.cssText="margin-top:2rem;animation:none";b.href="https://www.thebluealliance.com/team/8740";b.target="_blank";b.rel="noopener";b.textContent="Todos nuestros resultados en The Blue Alliance ↗";tl.parentNode.appendChild(b);
+var lang="es",btn=document.getElementById("lang");
+function find(t){for(var i=0;i<D.length;i++){var k=D[i][0];if(k.slice(-1)==="|"){if(t===k.slice(0,-1))return D[i][1]}else if(t.indexOf(k)===0)return D[i][1]}return null}
+function apply(){var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){return(!n.nodeValue.trim()||n.parentNode.closest("script,style,svg,h1,#lang,.nt,.uname"))?2:1}}),a=[],n;while(n=w.nextNode())a.push(n);
+a.forEach(function(n){if(n.__es===undefined)n.__es=n.nodeValue;var m=n.__es.match(/^(\s*)([\s\S]*?)(\s*)$/),e=lang==="en"?find(m[2]):null;n.nodeValue=e?m[1]+e+m[3]:n.__es});
+document.documentElement.lang=lang;btn.textContent=lang==="en"?"ES":"EN"}
+window.__tr=apply;
+btn.addEventListener("click",function(){lang=lang==="en"?"es":"en";apply();try{localStorage.setItem("lang",lang)}catch(e){}});
+try{if(localStorage.getItem("lang")==="en"){lang="en";apply()}}catch(e){}
+})();
+</script>
+</body></html>
